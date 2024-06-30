@@ -15,13 +15,15 @@ const moveZeros = (nums) => {
 console.log(moveZeros([0, 0, 0, 0, 0, 1, 0, 4, 0, 11, 41]));
 // console.log(moveZeros([0, 0, 1]));
 
+//using two pointers
 const endZeros = (nums) => {
   let zeros = 0;
   for (let i = 0; i < nums.length; i++) {
     if (nums[i]) {
+      //look for non-zeros and swap it all the zeros
       [nums[zeros], nums[i]] = [nums[i], nums[zeros]];
-        zeros++;
-        console.log(nums)
+      zeros++;
+      console.log(nums);
     }
   }
   return nums;
