@@ -1,3 +1,4 @@
+// return the heighest average subarray
 //GREEN and less BRUTE FORCE SOLUTION
 const averageSunArray = (nums, k) => {
   //initialise a new array
