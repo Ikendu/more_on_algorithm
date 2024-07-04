@@ -22,3 +22,22 @@ const longestOneAfterFlip = (nums, k) => {
 };
 
 console.log(longestOneAfterFlip([1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0], 2));
+
+// REDO for better understanding
+const longestOne = (nums, k) => {
+  let zeros = 0;
+  let back = 0;
+  let max = 0;
+
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] === 0) zeros++;
+
+    if (front > k) {
+      if (nums[back] === 0) front--;
+      back++;
+    }
+    max = Math.max(max, i - back);
+  }
+};
+
+console.log(longestOne([1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0], 2));
