@@ -46,3 +46,24 @@ console.log("--------------------------");
 console.log(uniqueCount1([1, 2, 2, 1, 1, 3]));
 console.log(uniqueCount1([1, 2]));
 console.log(uniqueCount1([-3, 0, 1, -3, 1, 1, 1, -3, 10, 0]));
+
+// using Object map
+const uniqueCount2 = (nums) => {
+  let hash = {};
+
+  for (let i of nums) {
+    if (hash[i]) {
+      hash[i]++;
+    } else {
+      hash[i] = 1;
+    }
+  }
+
+  let occurrances = Object.values(hash);
+  let valueSet = [...new Set(occurrances)];
+  return occurrances.length === valueSet.length;
+};
+console.log("--------------------------");
+console.log(uniqueCount2([1, 2, 2, 1, 1, 3]));
+console.log(uniqueCount2([1, 2]));
+console.log(uniqueCount2([-3, 0, 1, -3, 1, 1, 1, -3, 10, 0]));
