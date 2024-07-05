@@ -31,3 +31,18 @@ const arrayDiffs1 = (nums1, nums2) => {
 };
 console.log(arrayDiffs1([1, 2, 3], [2, 4, 6]));
 console.log(arrayDiffs1([1, 2, 3, 3], [1, 1, 2, 2]));
+
+const arrayDiffs2 = (nums1, nums2) => {
+  let setA = new Set(nums1);
+  let setB = new Set(nums2);
+
+  for (let num of setA) {
+    if (setB.has(num)) {
+      setA.delete(num);
+      setB.delete(num);
+    }
+  }
+  return [[...setA], [...setB]];
+};
+console.log(arrayDiffs2([1, 2, 3], [2, 4, 6]));
+console.log(arrayDiffs2([1, 2, 3, 3], [1, 1, 2, 2]));
