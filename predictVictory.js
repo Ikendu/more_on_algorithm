@@ -5,9 +5,9 @@ const predictVictory = (senate) => {
 
   for (let i = 0; i < n; i++) {
     if (senate[i] === `R`) {
-      radient.push(i + n);
+      radient.push(i);
     } else {
-      dire.push(i + n);
+      dire.push(i);
     }
   }
   while (radient.length > 0 && dire.length > 0) {
