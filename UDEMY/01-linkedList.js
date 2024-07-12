@@ -24,6 +24,15 @@ class LinkedList {
     this.length++;
     return this;
   }
+  pop() {
+    if (!this.head) {
+      return null
+    } else if (!this.head.next) {
+      this.head = null
+    } else {
+      
+    }
+  }
 }
 let myLinkedList = new LinkedList(4);
 myLinkedList.push(10);

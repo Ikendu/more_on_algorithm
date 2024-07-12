@@ -1,0 +1,24 @@
+//To be tested inside a binary function
+
+function pathSum(root, target) {
+  if (!root) return 0;
+  let count = 0;
+
+  function helper(node, sum) {
+    if (!node) return;
+
+    if (sum + node.val === target) {
+      count++;
+    }
+    return helper(node.left, sum) || helper(node.right, sum);
+  }
+
+  function dfs(node) {
+    if (!node) return;
+    node.left && dfs(node.left);
+    helper(node, 0);
+    node.right && dfs(node.right);
+  }
+  dfs(root);
+  return count;
+}
