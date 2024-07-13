@@ -1,3 +1,4 @@
+// will be tested in a Binary Tree Class
 function commonAncestor(root, p, q) {
   if (!root || root == p || root == q) return root;
 
