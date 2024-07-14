@@ -1,4 +1,4 @@
-//To be tested within a Binary Class
+//To be tested within a Binary Tree Class
 
 function similarLeave(root1, root2) {
   function checkIsSimilar(root, leafnodes) {

@@ -1,4 +1,4 @@
-//Not yet working well
+// Not yet working well
 function linkReverse(head) {
   let node = null;
 
@@ -8,6 +8,5 @@ function linkReverse(head) {
     node = head;
     head = temp;
   }
-
   return node;
 }
