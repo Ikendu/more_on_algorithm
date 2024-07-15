@@ -4,20 +4,19 @@ function pathSum(root, target) {
   if (!root) return 0;
   let count = 0;
 
-  function helper(node, sum) {
-    if (!node) return;
-
-    if (sum + node.val === target) {
-      count++;
-    }
-    return helper(node.left, sum) || helper(node.right, sum);
-  }
-
   function dfs(node) {
     if (!node) return;
-    node.left && dfs(node.left);
-    helper(node, 0);
-    node.right && dfs(node.right);
+    while (node) {
+      dfs(node.left);
+      helper(node, 0);
+      dfs(node.right);
+    }
+  }
+  function helper(node, sum) {
+    if (!node) return;
+    sum += node.value;
+    if (sum === target) count++;
+    return helper(node.left, sum) || helper(node.right, sum);
   }
   dfs(root);
   return count;
